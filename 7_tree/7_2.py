@@ -35,6 +35,7 @@ class BST:
         result += " " * 4 * level + f"{node.data}\n"
         result += self._printTree(node.left, level + 1)
         return result
+    
     def bfs(self, node):
         lst = []
         queue = [node]
