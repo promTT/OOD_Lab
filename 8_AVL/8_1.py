@@ -31,11 +31,10 @@ class AVLTree:
     def _add(self, root, data):
         if root == None:
             return self.AVLNode(data)
+        if data < root.data:
+            root.left = self._add(root.left, data)
         else:
-            if data < root.data:
-                root.left = self._add(root.left, data)
-            else:
-                root.right = self._add(root.right, data)
+            root.right = self._add(root.right, data)
         root.setHeight()
         root = self.rebalance(root)
         return root
